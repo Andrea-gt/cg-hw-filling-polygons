@@ -116,6 +116,29 @@ void Framebuffer::render() {
     ColorRGB lineColor(255, 255, 255);
     setCurrentColor(lineColor);
 
+    // Polygon 4
+    std::vector<Vertex2> polygonPoints = {
+            {413, 177}, {448, 159}, {502, 88}, {553, 53},
+            {535, 36}, {676, 37}, {660, 52}, {750, 145},
+            {761, 179}, {672, 192}, {659, 214}, {615, 214},
+            {632, 230}, {580, 230}, {597, 215}, {552, 214},
+            {517, 144}, {466, 180}
+    };
+
+    drawPolygon(polygonPoints);
+
+    ColorRGB fillColor(222, 244, 208);
+    setCurrentColor(fillColor);
+    fillPolygon(polygonPoints);
+
+    // Polygon 5
+    std::vector<Vertex2> polygonPoints1 = {
+            {682, 175}, {708, 120}, {735, 148}, {739, 170}
+    };
+
+    setCurrentColor(clearColor);
+    fillPolygon(polygonPoints1);
+
     writeBMP("out.bmp");
 }
 
